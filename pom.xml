@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>DockerRobotic</groupId>
+  <artifactId>com.dockers</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <name>com.dockers</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <mavencompilersource>1.8</mavencompilersource>
+    <mavencompilertarget>1.8</mavencompilertarget>
+     <javaVersion>1.8</javaVersion>
+    <testngVersion>7.1.0</testngVersion>
+    <mavenPluginVersion>3.8.1</mavenPluginVersion>
+    <slf4jVersion>2.0.7</slf4jVersion>
+    <seleniumVersion>3.141.59</seleniumVersion>
+    <lombokVersion>1.18.12</lombokVersion> 
+    <allureVersion>2.24.0</allureVersion>
+    <poiVersion>4.1.2</poiVersion>
+    <poiOoxmlVersion>4.1.2</poiOoxmlVersion>
+	<poiOoxmlSchemasVersion>4.1.2</poiOoxmlSchemasVersion>
+    <poiScratchpadVersion>4.1.2</poiScratchpadVersion> 
+    <ooxmlSchemasVersion>1.4</ooxmlSchemasVersion>
+    <commonsIoVersion>2.8.0</commonsIoVersion>
+  </properties>
+
+  <dependencies>
+   <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${seleniumVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testngVersion}</version>
+        </dependency>
+       
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>${allureVersion}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poiVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poiOoxmlVersion}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>${poiOoxmlSchemasVersion}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>${poiScratchpadVersion}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/ooxml-schemas -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>ooxml-schemas</artifactId>
+			<version>${ooxmlSchemasVersion}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commonsIoVersion}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+    		<groupId>org.slf4j</groupId>
+    		<artifactId>slf4j-api</artifactId>
+    	<version>${slf4jVersion}</version>
+	</dependency>
+ <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-api</artifactId>
+    <version>2.20.0</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-core</artifactId>
+    <version>2.20.0</version>
+  </dependency>
+	</dependencies>
+
+  <build>
+            <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${mavencompilersource}</source>
+                    <target>${mavencompilertarget}</target>
+                </configuration>
+            </plugin>
+            	<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+					<suiteXmlFiles> suppress UnresolvedMavenProperty 
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+        </plugins>
+         <resources>
+        <resource>
+            <directory>resources</directory>
+        </resource>
+    </resources>
+  </build>
+</project>

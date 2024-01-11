@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="methods" name="tests" thread-count="19">
+<listeners>
+<listener class-name="com.Analyzer.Transformations"></listener>
+
+</listeners>
+ 
+  	 <test name= "DeshBoardHomeTest" parallel="classes" thread-count="3">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.Tests.DeshBoardHomeTest">
+				<methods>
+					<include name="pageTitleTest" />
+					<include name="salseDataTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>  
+	
+ <test name="DeshBoardOrder" parallel="classes" thread-count="7">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.Tests.DeshBoardOrderTest">
+				<methods>
+					<include name="pageTitleTest" />
+					<include name="orderManueTest" />
+					<include name="heasdSelectionTest" />
+					<include name="bodySelectionTest" />
+					<include name="legsSelectionTest" /> 
+					<include name="shippingAddress" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+		<!--   <test name="Home Page" parallel="classes" thread-count="6">
+		<parameter name="browser" value="edge" />
+		<classes>
+			<class name="com.Tests.HomePageTest">
+				<methods>
+					<include name="pageTitleTest" />
+					<include name="homePageText" />
+					<include name="orderButtonTest" />
+					<include name="loginButtonTest" />
+					<include name="homeButtonTest" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>  
+
+	<test name="Login Page" parallel="classes" thread-count="4">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.Tests.LoginPageTest">
+				<methods>
+					<include name="pageTitleTest" />
+					<include name="loginTest" />
+					<include name="displayNameTest" /> 
+				</methods>
+			</class>
+		</classes> 
+	</test>  -->
+ 
+</suite> <!-- Suite -->
